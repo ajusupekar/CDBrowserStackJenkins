@@ -1,13 +1,10 @@
 pipeline {
-        agent any
-        stages
-        {
-            stage('Run functional test cases') 
-            {
-                steps 
-                {              
-                    sh "mvn clean install -DjenkinsBrowser=${params.browser} -Dcucumber.options=\"--tags ${params.tagName}\""
-                }
-            }
-      	}    
+  agent any
+  stages {
+    stage('Run functional test cases') {
+      steps {
+        sh "mvn clean install -DjenkinsBrowser=${params.browser} -Dcucumber.options=\"--tags ${params.tagName}\""
       }
+    }
+  }
+}
