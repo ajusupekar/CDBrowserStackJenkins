@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Run functional test cases') {
       steps {
-       // bat "mvn clean install -DjenkinsBrowser=${params.browser} -Dcucumber.options=\"--tags ${params.tagName}\""
-       bat "mvn clean install -DjenkinsBrowser=%params.browser% -Dcucumber.options=\"--tags %params.tagName%\""
+       bat "mvn clean install -DjenkinsBrowser=${params.browser} -Dcucumber.options=\"--tags ${params.tagName}\""
       }
     }
   }
