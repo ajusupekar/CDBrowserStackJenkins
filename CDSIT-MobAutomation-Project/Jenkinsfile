@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Run functional test cases') {
       steps {
+      bat "mkdir ${env.workspace}/CDWithPipeline/CDSIT-MobAutomation-Project"
        bat "mvn clean install -DjenkinsBrowser=${params.browser} -Dcucumber.options=\"--tags ${params.tagName}\""
       }
     }
