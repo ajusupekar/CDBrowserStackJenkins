@@ -52,22 +52,22 @@ public class AndroidAppStepDefinations {
 		LogCapture.info(" Application installed and launched successfully......!!!!");
 	}
 	
-	@Given("^(android) user installed the new (CD|TorFx) app and launched successfully$")
-	public void android_user_installed_the_new_CD_app_and_launched_successfully(String Platform, String app) throws Throwable {
-	//  Assert.assertEquals(Constants.KEYWORD_PASS,Constants.key.launchApp(app));
-	 Thread.sleep(10000);
-		Assert.assertEquals(Constants.KEYWORD_PASS,Constants.key.launchAppOnBrowserStack(Platform,app));
-	   
-	 LogCapture.info(app + " Application installed and launched successfully......!!!!");
-	}
-
-	@Given("^android user launched existing (CD|TorFx) app on the device successfully$")
-	public void android_user_launched_existing_CD_app_on_the_device_successfully(String app) throws Throwable {	
-    Assert.assertEquals("PASS", Constants.key.LaunchExistingAndroidApp(app));
-		//Assert.assertEquals("PASS", Constants.key.launchExistingAppOnBrowserStackAndroid());
-		
-		LogCapture.info("Application installed and launched successfully......!!!!");
-	}	   
+//	@Given("^(android) user installed the new (CD|TorFx) app and launched successfully$")
+//	public void android_user_installed_the_new_CD_app_and_launched_successfully(String Platform, String app) throws Throwable {
+//	//  Assert.assertEquals(Constants.KEYWORD_PASS,Constants.key.launchApp(app));
+//	 Thread.sleep(10000);
+//		Assert.assertEquals(Constants.KEYWORD_PASS,Constants.key.launchAppOnBrowserStack(Platform,app));
+//	   
+//	 LogCapture.info(app + " Application installed and launched successfully......!!!!");
+//	}
+//
+//	@Given("^android user launched existing (CD|TorFx) app on the device successfully$")
+//	public void android_user_launched_existing_CD_app_on_the_device_successfully(String app) throws Throwable {	
+//    Assert.assertEquals("PASS", Constants.key.LaunchExistingAndroidApp(app));
+//		//Assert.assertEquals("PASS", Constants.key.launchExistingAppOnBrowserStackAndroid());
+//		
+//		LogCapture.info("Application installed and launched successfully......!!!!");
+//	}	   
 	   
 	   
 	@When("^android the version is supported by the server$")

@@ -169,7 +169,7 @@ public class Reusables {
 				Constants.androidDc = new DesiredCapabilities();				
 				//Constants.AndroidDC.setCapability(MobileCapabilityType.DEVICE_NAME,Constants.CONFIG.getProperty("deviceName"));				
 				Constants.androidDc.setCapability(MobileCapabilityType.UDID, deviceId);
-				Constants.androidDc.setCapability(MobileCapabilityType.PLATFORM_VERSION,Constants.CONFIG.getProperty("platformVersion"));
+				Constants.androidDc.setCapability(MobileCapabilityType.PLATFORM_VERSION,Constants.CONFIG.getProperty("Loc_AndroidPlatformVersion"));
 				Constants.androidDc.setCapability("skipUnlock", "true");
 				Constants.androidDc.setCapability("appPackage", Constants.CONFIG.getProperty("AndroidCDAppPackage"));
 				Constants.androidDc.setCapability("appActivity", Constants.CONFIG.getProperty("CDAndroidAppActivity"));
@@ -180,7 +180,7 @@ public class Reusables {
 				// creating android driver instance
 				Constants.driver = new AndroidDriver<MobileElement>(new URL(Constants.appiumServerUrl),Constants.androidDc);
 				// WebdriverWait implementation
-				int waitInSeconds = Integer.parseInt(Constants.CONFIG.getProperty("waitInSeconds"));
+				int waitInSeconds = Integer.parseInt(Constants.CONFIG.getProperty("ModifyWaitInSecondsForAndroid"));
 				System.out.println(waitInSeconds);
 				Constants.wait = new WebDriverWait(Constants.driver, waitInSeconds);
 				takeSnapShot();
@@ -191,6 +191,7 @@ public class Reusables {
 			return Constants.KEYWORD_FAIL;
 		}
 		return Constants.KEYWORD_PASS;
+
 	}
 	
 	// To launch existing app without resetting data -------> Reset App and
