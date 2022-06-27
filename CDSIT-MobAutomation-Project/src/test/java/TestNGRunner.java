@@ -10,9 +10,9 @@ import cucumber.api.CucumberOptions;
 
 		features = { "src/Feature/" },
 
-		glue = { "com.cucumber.stepdefinition" }, strict = false, dryRun = true,
+		glue = { "com.cucumber.stepdefinition" }, strict = false, dryRun = false,
 
-		 tags = { "" },
+		 tags = { "@CDLoginForJenkins" },
 		 
 		 //Jenkins Tag @CDLoginForJenkins
 		 
