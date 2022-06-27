@@ -38,14 +38,14 @@ public class AndroidAppStepDefinations {
         String vBrowserName = Constants.CONFIG.getProperty("browser");
 
         
-//        try {
-//            if (!Constants.JenkinsBrowser.isEmpty() || !Constants.JenkinsBrowser.equals("")) {
-//                vBrowserName = Constants.JenkinsBrowser;
-//                LogCapture.info("Browser is :" + vBrowserName);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            if (!Constants.JenkinsBrowser.isEmpty() || !Constants.JenkinsBrowser.equals("")) {
+                vBrowserName = Constants.JenkinsBrowser;
+                LogCapture.info("Browser is :" + vBrowserName);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
         Assert.assertEquals(Constants.KEYWORD_PASS, Constants.key.launchAppUsingDeviceId(vObjAppVersion, vBrowserName));  
         LogCapture.info("Browser is :" + vBrowserName);		   
