@@ -31,23 +31,23 @@ public class AndroidAppStepDefinations {
 	@Given("^android user installed the new CD app and launched successfully\"([^\"]*)\"$")
 	public void android_user_installed_the_new_CD_app_and_launched_successfully(String browser) throws Throwable 
 	{	
-		String vObjAppVersion = "5";
+//		String vObjAppVersion = "5";
 		Thread.sleep(10000);
 		
 		LogCapture.info(browser + " Application is launching....");
         String vBrowserName = Constants.CONFIG.getProperty("browser");
-
+        System.out.println(vBrowserName);
         
-        try {
-            if (!Constants.JenkinsBrowser.isEmpty() || !Constants.JenkinsBrowser.equals("")) {
-                vBrowserName = Constants.JenkinsBrowser;
-                LogCapture.info("Browser is :" + vBrowserName);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            if (!Constants.JenkinsBrowser.isEmpty() || !Constants.JenkinsBrowser.equals("")) {
+//                vBrowserName = Constants.JenkinsBrowser;
+//                LogCapture.info("Browser is :" + vBrowserName);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         
-        Assert.assertEquals(Constants.KEYWORD_PASS, Constants.key.launchAppUsingDeviceId(vObjAppVersion, vBrowserName));  
+        Assert.assertEquals(Constants.KEYWORD_PASS, Constants.key.launchAppUsingDeviceId(vBrowserName));  
         LogCapture.info("Browser is :" + vBrowserName);		   
 		LogCapture.info(" Application installed and launched successfully......!!!!");
 	}

@@ -281,6 +281,9 @@
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.0</version>
+					<configuration>
+						<executable>C:\Program Files\Java\jdk1.8.0_291\bin\javac</executable>
+					</configuration>
 				</plugin>
 				<!--<plugin> <artifactId>maven-surefire-plugin</artifactId> <version>3.0.0-M4</version> 
 					</plugin> -->

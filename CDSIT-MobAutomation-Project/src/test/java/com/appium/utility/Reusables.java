@@ -158,7 +158,7 @@ public class Reusables {
 
 	}
 
-	public String launchAppUsingDeviceId(String appVersion , String deviceId) throws Exception {
+	public String launchAppUsingDeviceId(String deviceId) throws Exception {
 		try {
 			// Writing logs in log file
 			LogCapture.info("Application setup started............");
@@ -171,11 +171,11 @@ public class Reusables {
 				Constants.androidDc.setCapability(MobileCapabilityType.UDID, deviceId);
 				Constants.androidDc.setCapability(MobileCapabilityType.PLATFORM_VERSION,Constants.CONFIG.getProperty("platformVersion"));
 				Constants.androidDc.setCapability("skipUnlock", "true");
-				Constants.androidDc.setCapability("appPackage", Constants.CONFIG.getProperty("appPackage"));
-				Constants.androidDc.setCapability("appActivity", Constants.CONFIG.getProperty("appActivity"));
+				Constants.androidDc.setCapability("appPackage", Constants.CONFIG.getProperty("AndroidCDAppPackage"));
+				Constants.androidDc.setCapability("appActivity", Constants.CONFIG.getProperty("CDAndroidAppActivity"));
 				Constants.androidDc.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 90000);
 				Constants.androidDc.setCapability(MobileCapabilityType.NO_RESET, "false");
-				Constants.appiumServerUrl = Constants.CONFIG.getProperty("appiumServerUrl");
+				Constants.appiumServerUrl = Constants.CONFIG.getProperty("Loc_appiumServerUrl");
 
 				// creating android driver instance
 				Constants.driver = new AndroidDriver<MobileElement>(new URL(Constants.appiumServerUrl),Constants.androidDc);
