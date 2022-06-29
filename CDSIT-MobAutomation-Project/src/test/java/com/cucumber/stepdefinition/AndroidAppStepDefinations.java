@@ -71,7 +71,7 @@ public class AndroidAppStepDefinations {
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
-	        Assert.assertEquals(Constants.KEYWORD_PASS, Constants.key.launchUsingDevId(app , vBrowserName));  
+	        Assert.assertEquals(Constants.KEYWORD_PASS, Constants.key.LaunchExistingAndroidApp(app , vBrowserName));  
 	        LogCapture.info("Device ID is :" + vBrowserName);		   
 			LogCapture.info(" Application installed and launched successfully......!!!!");
 		}
