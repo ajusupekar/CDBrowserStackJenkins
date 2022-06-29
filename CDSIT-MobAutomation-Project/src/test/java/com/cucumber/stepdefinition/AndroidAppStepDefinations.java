@@ -28,38 +28,61 @@ public class AndroidAppStepDefinations {
 	
 	String userEmail = "";
 	
-	@Given("^android user installed the new CD app and launched successfully\"([^\"]*)\"$")
-	public void android_user_installed_the_new_CD_app_and_launched_successfully(String browser) throws Throwable 
-	{	
+//	@Given("^android user installed the new CD app and launched successfully\"([^\"]*)\"$")
+//	public void android_user_installed_the_new_CD_app_and_launched_successfully(String browser) throws Throwable 
+//	{	
 //		String vObjAppVersion = "5";
-		Thread.sleep(10000);
-		
-		LogCapture.info(browser + " Application is launching....");
-        String vBrowserName = Constants.CONFIG.getProperty("browser");
-        System.out.println(vBrowserName);
-        
-        try {
-            if (!Constants.JenkinsBrowser.isEmpty() || !Constants.JenkinsBrowser.equals("")) {
-                vBrowserName = Constants.JenkinsBrowser;
-                LogCapture.info("Browser is :" + vBrowserName);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        
-        Assert.assertEquals(Constants.KEYWORD_PASS, Constants.key.launchAppUsingDeviceId(vBrowserName));  
-        LogCapture.info("Browser is :" + vBrowserName);		   
-		LogCapture.info(" Application installed and launched successfully......!!!!");
-	}
-	
-//	@Given("^(android) user installed the new (CD|TorFx) app and launched successfully$")
-//	public void android_user_installed_the_new_CD_app_and_launched_successfully(String Platform, String app) throws Throwable {
-//	//  Assert.assertEquals(Constants.KEYWORD_PASS,Constants.key.launchApp(app));
-//	 Thread.sleep(10000);
-//		Assert.assertEquals(Constants.KEYWORD_PASS,Constants.key.launchAppOnBrowserStack(Platform,app));
-//	   
-//	 LogCapture.info(app + " Application installed and launched successfully......!!!!");
+//		Thread.sleep(10000);
+//		
+//		LogCapture.info(browser + " Application is launching....");
+//        String vBrowserName = Constants.CONFIG.getProperty("browser");
+//        System.out.println(vBrowserName);
+//        
+//        try {
+//            if (!Constants.JenkinsBrowser.isEmpty() || !Constants.JenkinsBrowser.equals("")) {
+//                vBrowserName = Constants.JenkinsBrowser;
+//                LogCapture.info("Browser is :" + vBrowserName);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        
+//        Assert.assertEquals(Constants.KEYWORD_PASS, Constants.key.launchAppUsingDeviceId(vBrowserName));  
+//        LogCapture.info("Browser is :" + vBrowserName);		   
+//		LogCapture.info(" Application installed and launched successfully......!!!!");
 //	}
+	
+	@Given("^(android) user installed the new (CD|TorFx) app and launched successfully$")
+	public void android_user_installed_the_new_CD_app_and_launched_successfully(String Platform, String app) throws Throwable {
+	//  Assert.assertEquals(Constants.KEYWORD_PASS,Constants.key.launchApp(app));
+		
+		if(Constants.CONFIG.getProperty("isJenkins").equals("true"))
+		{
+			Thread.sleep(10000);		
+			//LogCapture.info(browser + " Application is launching....");
+	        String vBrowserName = Constants.CONFIG.getProperty("browser");
+	        System.out.println(vBrowserName);
+	        
+	        try {
+	            if (!Constants.JenkinsBrowser.isEmpty() || !Constants.JenkinsBrowser.equals("")) {
+	                vBrowserName = Constants.JenkinsBrowser;
+	                LogCapture.info("Device ID is :" + vBrowserName);
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        Assert.assertEquals(Constants.KEYWORD_PASS, Constants.key.launchUsingDevId(app , vBrowserName));  
+	        LogCapture.info("Device ID is :" + vBrowserName);		   
+			LogCapture.info(" Application installed and launched successfully......!!!!");
+		}
+		else if(Constants.CONFIG.getProperty("isBrowserstack").equals("true"))
+		{
+			Thread.sleep(10000);
+			Assert.assertEquals(Constants.KEYWORD_PASS,Constants.key.launchAppOnBrowserStack(Platform,app));
+			LogCapture.info(app + " Application installed and launched successfully......!!!!");
+		}
+		
+	}
 //
 //	@Given("^android user launched existing (CD|TorFx) app on the device successfully$")
 //	public void android_user_launched_existing_CD_app_on_the_device_successfully(String app) throws Throwable {	

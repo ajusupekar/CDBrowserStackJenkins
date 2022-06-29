@@ -12,7 +12,7 @@ import cucumber.api.CucumberOptions;
 
 		glue = { "com.cucumber.stepdefinition" }, strict = false, dryRun = false,
 
-		 tags = { "@CDLoginForJenkins" },
+		 tags = { "@PAD-3040_TC01" },
 		 
 		 
 		 //Jenkins Tag @CDLoginForJenkins
