@@ -351,7 +351,7 @@ public class Reusables {
 			Constants.androidDc = new DesiredCapabilities();
 			//Constants.androidDc.setCapability("deviceName", Constants.CONFIG.getProperty("Loc_AndroidDeviceName"));
 			Constants.androidDc.setCapability("udid", deviceID);
-			Constants.androidDc.setCapability("platformVersion", Constants.CONFIG.getProperty("Loc_AndroidPlatformVersion"));
+			//Constants.androidDc.setCapability("platformVersion", Constants.CONFIG.getProperty("Loc_AndroidPlatformVersion"));
 			Constants.androidDc.setCapability("skipUnlock", "true");
 			if (app.equalsIgnoreCase("CD")) {
 			Constants.androidDc.setCapability("appPackage", Constants.CONFIG.getProperty("AndroidCDAppPackage"));
@@ -359,9 +359,9 @@ public class Reusables {
 				Constants.androidDc.setCapability("appPackage",Constants.CONFIG.getProperty("AndroidTorFxPackage"));
 			}
 			Constants.androidDc.setCapability("appActivity", Constants.CONFIG.getProperty("CDAndroidAppActivity"));
-			Constants.androidDc.setCapability("appVersion", Constants.CONFIG.getProperty("Loc_AndroidPlatformVersion"));
+			//Constants.androidDc.setCapability("appVersion", Constants.CONFIG.getProperty("Loc_AndroidPlatformVersion"));
 			Constants.androidDc.setCapability("uiautomator2ServerInstallTimeout", 1800000);
-		    Constants.androidDc.setCapability("unicodeKeyboard", false);
+		    //Constants.androidDc.setCapability("unicodeKeyboard", false);
 			Constants.androidDc.setCapability("noReset", "false");
 			//Constants.appiumServerUrl = Constants.CONFIG.getProperty("Loc_appiumServerUrl");
 			Constants.androidDc.setCapability("platformName", Constants.CONFIG.getProperty("platformName"));
